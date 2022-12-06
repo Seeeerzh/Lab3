@@ -1,6 +1,7 @@
-/* AppComponent's private CSS styles */
-h1 {
-    margin-bottom: 0;
+/* DashboardComponent's private CSS styles */
+
+h2 {
+    text-align: center;
     font-size: 90px;
   font-weight: 600;
   font-family: 'Niconne', cursive;
@@ -11,10 +12,68 @@ h1 {
                8px 8px 0px #ff7f50,
                10px 10px 0px #553c9a;
   }
-  nav a {
+  
+  .heroes-menu {
+    padding: 0;
+    margin: auto;
+    max-width: 1000px;
+  
+    /* flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  a {
+    background-color: #d71919;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-width: 70px;
+    margin: .5rem auto;
+    box-sizing: border-box;
+  
+    /* flexbox */
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+  
+  @media (min-width: 600px) {
+    a {
+      width: 18%;
+      box-sizing: content-box;
+    }
+  }
+  
+  a:hover {
+    background-color: rgb(21, 31, 208);
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #3B3B3B
+}
+
+.button {
     font-family: 'Poppins';
     width: 320px;
-    height: 250px;
+    height: 50px;
     border: none;
     outline: none;
     color: #494949;
@@ -26,9 +85,9 @@ h1 {
     position: relative;
     z-index: 0;
     transition: 0.5s ease-in-out;
-  }
-  
-  nav a:before {
+}
+
+.button:before {
     content: '';
     background: linear-gradient(45deg, #FF0000, #FFF700, #FF7000, #FF00FE, #3FF4EB, #9E00FF, #00BEFF, #FF00DD, #FF0000);
     position: absolute;
@@ -44,23 +103,23 @@ h1 {
     transition: opacity .3s ease-in-out;
 }
 
-nav a:active {
+.button:active {
     color: #000
 }
 
-nav a:active:after {
+.button:active:after {
     background: transparent;
 }
 
-nav a:hover {
+.button:hover {
     transform: scale(1.05);
 }
 
-nav a:hover:before {
+.button:hover:before {
     opacity: 1;
 }
 
-nav a:after {
+.button:after {
     z-index: -1;
     content: '';
     position: absolute;

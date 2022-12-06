@@ -1,0 +1,25 @@
+<h2>My Games</h2>
+<div>
+  <label for="new-game">Game name: </label>
+  <input id="new-game" #gameName />
+  <label for="new-image">Image URL: </label>
+  <input id="new-image" #URL />
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(gameName.value, URL.value);  gameName.value=''; URL.value='' " >
+    Add game
+  </button>
+</div>
+
+<ul class="games">
+  <li *ngFor="let game of games">
+    <a routerLink="/detail/{{game.id}}">
+      <span class="badge">{{game.id}}</span> <span>{{game.name}}  </span> <img src={{game.image}} alt="Game" height="20 em"  />
+
+    </a>
+    
+    <button type="button" class="delete" title="delete game"
+      (click)="delete(game)">x</button>
+  </li>
+</ul>
+
+<!--http://localhost:4200/-->

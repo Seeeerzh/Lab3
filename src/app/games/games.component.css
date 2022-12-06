@@ -1,0 +1,167 @@
+/* HeroesComponent's private CSS styles */
+.games {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+.games li {
+  position: relative;
+  cursor: pointer;
+}
+
+.games li:hover {
+  left: .1em;
+}
+
+.games a {
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+
+.games a:hover {
+  color: #ff0000;
+  background-color: #e6e6e6;
+}
+.games a:active {
+  background-color: #ff0000;
+  color: #fafafa;
+}
+
+
+
+
+
+.games .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #ff0000;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+  
+}
+
+.games .name {
+  align-self: center;
+  text-align: center;
+}
+
+.add-button {
+  padding: .5rem 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+ }
+ 
+ .add-button:hover {
+   color: white;
+   background-color: #ff0000;
+ }
+ 
+ .games button.delete {
+   position: absolute;
+   left: 210px;
+   top: 5px;
+   background-color: white;
+   color:  #ff0000;
+   font-size: 1.1rem;
+   margin: 0;
+   padding: 1px 10px 3px 10px;
+ }
+ 
+ .games button.delete:hover {
+   background-color: #ff0000;
+   color: white;
+ }
+
+ 
+
+.games .button {
+  font-family: 'Poppins';
+  width: 320px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #494949;
+  background: #ffffff;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.games .button:before {
+  content: '';
+  background: linear-gradient(45deg, #FF0000, #FFF700, #FF7000, #FF00FE, #3FF4EB, #9E00FF, #00BEFF, #FF00DD, #FF0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.games .button:active {
+  color: #000
+}
+
+.games .button:active:after {
+  background: transparent;
+}
+
+.games .button:hover {
+  transform: scale(1.05);
+}
+
+.games .button:hover:before {
+  opacity: 1;
+}
+
+.games .button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  left: 0;
+  top: 0;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
